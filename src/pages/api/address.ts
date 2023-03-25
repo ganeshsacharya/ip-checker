@@ -10,5 +10,5 @@ export default function handler(
   res: NextApiResponse<any>
 ) {
   console.log(req.connection.remoteAddress)
-  res.status(200).json({  })
+  res.status(200).json({ ip: req.connection.remoteAddress })
 }
