@@ -9,8 +9,9 @@ type Data = {
 }
 
 export default function handler(
-  req: NextRequest,
+  req: NextApiRequest,
   res: NextApiResponse<any>
 ) {
-  res.status(200).json({ ip: req})
+  // console.log(req.headers)
+  res.status(200).json({ip: req.headers.host})
 }
