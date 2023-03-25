@@ -12,5 +12,5 @@ export default function handler(
   req: NextRequest,
   res: NextApiResponse<any>
 ) {
-  res.status(200).json({ ip: req.ip})
+  res.status(200).json({ ip: req})
 }
