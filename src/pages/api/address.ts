@@ -12,6 +12,8 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<any>
 ) {
-  // console.log(req.headers)
-  res.status(200).json({ip: req.headers.host})
+  const forwarded = req.headers['x-forwarded-for'];
+  const ip = typeof forwarded === 'string' ? forwarded.split(/, /)[0] : req.socket.remoteAddress;
+  console.log(ip);
+  res.status(200).json({ip})
 }
